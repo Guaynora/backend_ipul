@@ -2,6 +2,7 @@ version: '3'
 services:
   strapi:
     image: strapi/strapi
+    container_name: ipul_api
     environment:
       DATABASE_CLIENT: ${DATABASE_CLIENT}
       DATABASE_HOST: ${DATABASE_HOST}
@@ -20,6 +21,7 @@ services:
 
   mariadb:
     image: mariadb
+    container_name: ipul_db
     volumes:
       - ./ipuldata:/var/lib/mysql
     environment:
