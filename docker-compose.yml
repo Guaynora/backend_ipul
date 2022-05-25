@@ -1,0 +1,40 @@
+version: '3'
+services:
+  strapi:
+    image: strapi/strapi
+    environment:
+      DATABASE_CLIENT: ${DATABASE_CLIENT}
+      DATABASE_HOST: ${DATABASE_HOST}
+      DATABASE_PORT: ${DATABASE_PORT}
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+    volumes:
+      - ./app_ipul:/srv/app
+    ports:
+      - '1337:1337'
+    networks:
+      - ipul-network
+    depends_on:
+      - mariadb
+
+  mariadb:
+    image: mariadb
+    volumes:
+      - ./ipuldata:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DATABASE_NAME}
+      MYSQL_USER: ${DATABASE_USERNAME}
+      MYSQL_PASSWORD: ${DATABASE_PASSWORD}
+    ports:
+      - "3306:3306"
+    networks:
+      - ipul-network
+
+networks:
+  ipul-network:
+    driver: bridge
+  
+volumes: 
+  ipuldata:

@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "offerings",
+  "info": {
+    "name": "offering",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "jovenes",
+        "dorcas",
+        "misiones",
+        "gavilla",
+        "rayos_de_luz",
+        "semestral_jovenes",
+        "semestral_dorcas"
+      ],
+      "required": false
+    },
+    "dateOffering": {
+      "type": "date"
+    },
+    "amountOffering": {
+      "type": "decimal"
+    }
+  }
+}

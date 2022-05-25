@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tithes",
+  "info": {
+    "name": "tithe"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "member": {
+      "model": "members"
+    },
+    "date": {
+      "type": "date"
+    },
+    "amount": {
+      "type": "decimal"
+    }
+  }
+}

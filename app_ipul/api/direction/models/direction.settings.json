@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "directions",
+  "info": {
+    "name": "direction",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "directionName": {
+      "type": "string"
+    }
+  }
+}
